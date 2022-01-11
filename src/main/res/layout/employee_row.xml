@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="emp"
+            type="com.example.roomlibrarybatch_2.entities.Employee" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            >
+
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:text="@{emp.name}"
+                />
+
+            <TextView
+                android:id="@+id/salaryTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:layout_below="@id/nameTV"
+                android:text="@{String.valueOf(emp.salary)}"
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/rowMenuBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_baseline_more_vert_24"
+                app:backgroundTint="@color/white"
+                app:elevation="0dp"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
